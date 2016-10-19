@@ -1,0 +1,4 @@
+Site Name,Alert Name,Severity,Recipients,Scan Events,,
+Site,test,8,"test_user@company.com,user_test@company.com","1,0,0,0,1",Notes:,
+Batman,batman Alert,4,user@company.com,"1,1,1,0,0",Scan Events are 0(false) and 1(true) and require 5 comma delimited values ,"(started, stopped, failed, paused. resumed)"
+,,,,,Severity needs to be a single value,"(1 - Any severity, 4 - Severe and Critical, and 8 - Only Critical)"

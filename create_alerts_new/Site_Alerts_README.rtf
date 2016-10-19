@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Consolas;\f2\fmodern\fcharset0 CourierNewPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red50\green98\blue178;\red255\green255\blue255;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid202\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww19020\viewh14300\viewkind0
+\deftab720
+\pard\pardeftab720\sl440\sa320\partightenfactor0
+
+\f0\b\fs36 \cf2 \expnd0\expndtw0\kerning0
+Documentation for Site Alerts from CSV\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs30 \cf3 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 About\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\b0\fs32 \cf2 The script is for creating alerts for existing sites in bulk. Allowing you to set alerts, severity, recipients, and scan events for multiple sites at the same time.\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\b\fs30 \cf3 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 Required files\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\partightenfactor0
+\ls1\ilvl0
+\b0\fs32 \cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+bulk_sites.rb\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+config.yml\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+sitelist.csv\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\b\fs30 \cf3 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 Setup\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\b0\fs32 \cf2 1) Ensure ruby 2.3.1 is installed (for more details see {\field{\*\fldinst{HYPERLINK "https://github.com/rapid7/nexpose-client/wiki"}}{\fldrslt https://github.com/rapid7/nexpose-client/wiki}})\
+2) Install required gems: 
+\f1\fs28 \cb1 gem install <gemname>
+\f0\fs32 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+logger\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+nexpose\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}yaml\expnd0\expndtw0\kerning0
+\
+\pard\tx720\pardeftab720\sl480\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+\cf2 3) Configure yaml file with nexpose settings\
+4) Configure the sender email address and email relay server inside the ruby script\
+ \cf2 \kerning1\expnd0\expndtw0 \'95	\expnd0\expndtw0\kerning0
+Edit the site_alerts_from_csv.rb file and change the following two lines:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\partightenfactor0
+
+\f2 \cf2 			# Set the SMTP Sender Address\
+			sender = 'test@company.com'\
+ 			# Set the SMTP Relay Server\
+			server = 'relay.company.com'
+\f0 \kerning1\expnd0\expndtw0 \
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+\cf2 5) Configure CSV file with required settings (attached example \'91site_alerts.csv)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Site Name - The name of the site to update (cannot be blank).\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Alert Name - The name of the alert that will be in the aforementioned site (cannot be blank).\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}Severity - Severity needs to be a single value - (1 - Any severity, 4 - Severe and Critical, and 8 - Only Critical)\expnd0\expndtw0\kerning0
+\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Recipients - Can have one or many comma separated email recipients.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\sa320\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Scan Events - Scan Events are 0(false) and 1(true) and require 5 comma delimited values \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl480\sa320\partightenfactor0
+\ls3\ilvl1\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8259 	}(started, stopped, failed, paused. resumed)\expnd0\expndtw0\kerning0
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\sa320\partightenfactor0
+\ls3\ilvl0
+\b\fs36 \cf2 Run the script\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\b0\fs32 \cf2 Once those files have been filled out accordingly you should be able to execute the script:\
+\pard\pardeftab720\sl480\partightenfactor0
+
+\f1\fs28 \cf2 \cb4 ruby site_alerts_from_csv.rb
+\f0\fs32 \cb1 \
+}

@@ -1,0 +1,6 @@
+---
+:nexpose:
+  :host: 'SERVER IP OR HOSTNAME'
+  :user: 'NEXPOSE USERNAM'
+  :pass: 'NEXPOSE PASSWORD'
+  :port: '3780'
